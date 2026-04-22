@@ -9,8 +9,7 @@ phases:
     commands:
       - echo Starting build at `date`
       - echo Building the Docker image... 
-      - echo "DEBUG - Repo: $IMAGE_REPO_NAME"
-      - echo "DEBUG - Repo: "$IMAGE_REPO_NAME"
+      - echo DEBUG - Repo: $IMAGE_REPO_NAME
       - echo DEBUG - BuildNum: $CODEBUILD_BUILD_NUMBER         
       - docker build -t $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER .
       - docker tag $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER      
